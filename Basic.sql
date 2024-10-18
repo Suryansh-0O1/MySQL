@@ -1,0 +1,21 @@
+CREATE DATABASE Restaurant;
+
+USE Restaurant;
+
+CREATE TABLE RList(
+	Num INT NOT NULL,
+	Rname VARCHAR(216) NOT NULL,
+    Radress VARCHAR(216) NOT NULL,
+    Income INT NOT NULL,
+    PRIMARY KEY(Num)
+);
+
+CREATE TABLE Menu(
+	Num INT NOT NULL,
+	Meals VARCHAR(200) NOT NULL,
+    MealType VARCHAR(200) NOT NULL,
+    Price INT NOT NULL,
+    PRIMARY KEY(Num),
+    Rnum INT NOT NULL,
+    FOREIGN KEY(Rnum) REFERENCES RList(Num)
+);
